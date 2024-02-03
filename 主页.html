@@ -158,7 +158,7 @@ __无目录__
     <div class="col-sm-3 left-zone">
         {{BOX|开始}}
         {{标题|侧边|公告}}
-        <div style="padding:10px">
+        <div style="padding: 10px;" class="left-text">
             {{板块|文章|卫星|黑天鹅}}
             {{板块|文章|卫星|花火}}
             {{板块|文章|卫星|米沙}}
@@ -169,12 +169,14 @@ __无目录__
             {{板块|文章|公告|有问哔答留言板}}
             {{板块|文章|公告|兑换码}}
         </div>
+
+
         {{BOX|结束}}
         <!-- 分割线 -->
 
         {{BOX|开始}}
         {{标题|侧边|攻略}}
-        <div style="padding:10px">
+        <div style="padding: 10px;" class="left-text more-bottom">
             {{板块|文章|专题|版本新增内容|版本内容一览}}
             {{板块|文章|新手|新手教程}}
             {{板块|文章|新手|战斗机制}}
@@ -190,6 +192,8 @@ __无目录__
             {{查看更多|攻略}}
         </div>
         {{BOX|结束}}
+
+
         <!-- 分割线 -->
 
         <div style="margin-bottom:20px">
@@ -206,6 +210,100 @@ __无目录__
         {{BOX|结束}}
         <!-- 分割线 -->
     </div><!--左侧结束-->
+
+    {{#css:
+    .left-text div {
+    position: relative;
+    }
+
+    .left-text div::before,
+    .left-text div::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid transparent; /* 设置边框颜色为透明 */
+    border-bottom: 1px solid transparent; /* 设置边框颜色为透明 */
+
+    }
+
+    .left-text div::before {
+    top: 0;
+    }
+
+    .left-text div::after {
+    bottom: 0;
+    }
+
+    .left-text div:hover::before,
+    .left-text div:hover::after {
+    border-color: #DBC28A; /* 鼠标 hover 时设置边框颜色 */
+    }
+
+    .left-text div:hover .BOX-zt {
+    color: #DBC28A !important;
+    }
+    .more-bottom div:last-child:hover::before,
+    .more-bottom div:last-child:hover::after{
+    border:transparent
+    }
+
+
+    /* 左侧样式 */
+    .left-zone .box-btl-1{
+    color: #DBC28A ;
+    background: #3E4556 !important;
+    border-radius:5px
+    }
+    .left-zone .home-box1{
+    background:rgba(246,246,246,0.3);
+    border-radius:5px
+    }
+    .left-text>div>span:first-child {
+    background:#DBC28A !important;
+    }
+
+    .update-log .bili-list-group-item {
+    position: relative;
+    }
+
+    .update-log .bili-list-group-item::before,
+    .update-log .bili-list-group-item::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+
+    border-bottom: 1px solid transparent; /* 设置边框颜色为透明 */
+    }
+    .update-log .bili-list-group-item::before{
+    top:0;
+    }
+    .update-log .bili-list-group-item::after{
+    bottom:0
+    }
+    .update-log .bili-list-group-item:hover::before,
+    .update-log .bili-list-group-item:hover::after{
+    border-color: #DBC28A;
+    }
+
+    .update-log .bili-list-group-item:hover a {
+    color: #DBC28A !important;
+    text-decoration: none; /* 去掉下划线 */
+    }
+
+    .flex-hvc span {
+    background:#DBC28A !important;
+
+    }
+    .update-log .bili-list-group-item:hover .flex-hvc {
+    color: #DBC28A !important;
+    }
+
+
+    }}
 
     <!--中栏开始-->
     <div class="col-sm-6">
@@ -365,6 +463,22 @@ __无目录__
             <!-- 分割线 -->
         </div><!--仅PC端显示内容结束-->
     </div><!--中栏结束-->
+    {{#css:
+    .visible-md {
+    background:rgb(225,225,225,0.1)
+    }
+    .visible-md .box-btl-2 {
+    color: #DAC391;
+    background:#3E4556;
+    border-radius:5px
+    }
+    .visible-md .box-sy img:hover {
+    border:2px solid #DAC391;
+    }
+    .visible-md .home-an1:hover span{
+    color:#DAC391 !important;
+    }
+    }}
 
     <!--右侧开始-->
     <div class="col-sm-3">
@@ -436,7 +550,7 @@ __无目录__
     <!-- 分割线 -->
 </div><!--右侧结束-->
 {{#css:
-.game-bg {background:rgba( 36, 40, 45,0.3);}
+.game-bg {background:rgba( 52, 54, 54,0.4); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
 .wiki-header {background: transparent;padding: 20px 0 20px;}
 .wiki-header .wiki-nav .ul-menu-1 .li-menu-1 .menu-title-1 {color: #f7f7f7;}
 .wiki-header .wiki-nav {border: 0px solid #262626;box-shadow: none;border-radius: 0px;background:rgb(51 59 72 / 62%);}
